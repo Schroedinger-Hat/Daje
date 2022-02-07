@@ -1,7 +1,4 @@
 ---
-# === MacOSX ===
-os: MacOSX
-
 # === System configuration ===
 username: test
 group: staff

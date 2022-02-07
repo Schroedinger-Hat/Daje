@@ -24,11 +24,12 @@
 
     - name: Create Workspaces directory
       file:
-        path: "{{ home_dir }}/{{ workspace_dir }}/Personal/Dotfiles"
+        path: "{{ home_dir }}/{{ workspace_dir }}"
         owner: "{{ username }}"
         group: "{{ group | default(username) }}"
         state: directory
         mode: "0755"
+      when: workspace_dir is defined
 
     - name: Update packages
       shell: "{{ update_command }}"
