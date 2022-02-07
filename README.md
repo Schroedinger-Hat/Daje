@@ -1,4 +1,4 @@
-# Daje - Ansible dotfiles installer
+# Daje - A general purpose Ansible dotfiles installer
 
 Configure one time and run everywhere.
 
@@ -79,9 +79,20 @@ If you're wondering where to put a configuration task or a package installation,
 
 ## List of all tasks
 
-| Task     | Requirements | Reference |
+| Task     | Requirements/Description | Reference |
 |----------|--------------|-------------|
-| [alacritty](tasks/alacritty.yml) | configuration file must be on .config/alacritty/alacritty.yml | [github/alacritty](https://github.com/alacritty/alacritty) |
+| [alacritty](tasks/alacritty.yml) | Configuration file must be on .config/alacritty/alacritty.yml | [github/alacritty](https://github.com/alacritty/alacritty) |
+| [bash](tasks/bash.yml) | Configuration file must be on .bashrc | [gnu/bash](https://www.gnu.org/software/bash/) |
+| [bluetooth](tasks/bluetooth.yml) | These task enable systemd bluetooth service | --- |
+| [dunst](tasks/dunst.yml) | Configuration file must be on .config/dunst/ | [dunst-project](https://dunst-project.org) |
+| [git](tasks/git.yml) | Configuration file must be .gitconfig and .gitignore | [git](https://git-scm.com/) |
+| [gtk3](tasks/gtk3.yml) | Configuration file must be .config/gtk-3.0/ | [gtk.org](https://www.gtk.org/) |
+| [homebrew](tasks/homebrew.yml) | Install homebrew on MacOSX | [brew.sh](https://brew.sh/) |
+| [i3](tasks/i3.yml) | Configuration file must be .config/i3/ | [i3wm.org](https://i3wm.org/) |
+| [nitrogen](tasks/nitrogen.yml) | Configuration file must be .config/nitrogen/ | [github/nitrogen](https://github.com/l3ib/nitrogen/) |
+| [ohmyzsh](tasks/ohmyzsh.yml) | Install oh-my-zsh | [ohmyz.sh](https://ohmyz.sh/) |
+| [paru](tasks/paru.yml) | Install paru on Archlinux | [github/paru](https://github.com/morganamilo/paru) |
+| [polybar](tasks/polybar.yml) | Configuration file must be .config/polybar/ | [github/polybar](https://polybar.github.io/) |
 
 ## Q&A
 
@@ -92,4 +103,9 @@ It will works, but are you sure to do it? See [Ide vs System vs General](#ide-vs
 ### I have created a new task and I want to add to this template, how can I do it?
 
 Open a pull request and add that task.
+
+## Example repository
+
+I create these template for my dotfiles that you can find here -> [wabri/dotfiles](https://github.com/Wabri/dotfiles).
+
 
