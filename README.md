@@ -4,7 +4,7 @@ Configure one time and run everywhere.
 
 ## What is this
 
-I've never liked using a big bash script to install my dotfiles, because the more you add, the more that becomes: bloated, complex to maintain, and less reproducible across multiple platforms. This is why I start write this simple and easy to mantain playbook template that works in every *unix system.
+I've never liked using a big bash script to install my dotfiles, because the more you add, the more that becomes: bloated, complex to maintain, and less reproducible across multiple platforms. This is why I start write this simple and easy to mantain playbook template that works in every *nix system.
 
 ## How it works
 
@@ -93,6 +93,16 @@ If you're wondering where to put a configuration task or a package installation,
 | [ohmyzsh](tasks/ohmyzsh.yml) | Install oh-my-zsh | [ohmyz.sh](https://ohmyz.sh/) |
 | [paru](tasks/paru.yml) | Install paru on Archlinux | [github/paru](https://github.com/morganamilo/paru) |
 | [polybar](tasks/polybar.yml) | Configuration file must be .config/polybar/ | [github/polybar](https://polybar.github.io/) |
+| [rofi](tasks/rofi.yml) | Configuration file must be .config/rofi/ | [davatorium/rofi](https://github.com/davatorium/rofi) |
+| [rofithemes](tasks/rofithemes.yml) | Install rofi themes collection | [lr-tech/rofi-themes-collection](https://github.com/lr-tech/rofi-themes-collection) |
+| [sddm-sugar-candy](tasks/sddm-sugar-candy.yml) | Install sddm sugar candy theme (works only on arch with AUR packages enabled) | [aur/sddm-sugar-candy-git](https://store.kde.org/p/1312658/) |
+| [spotify](tasks/spotify.yml) | Install spotify with spicetify themes and more. Must modify task if want a different theming. (For now it works only on linux... sorry!) | [khanhas/spicetify-cli](https://github.com/khanhas/spicetify-cli) |
+| [starship](tasks/starship.yml) | Install starship the minimal, blazing-fast, and infinitely customizable prompt for any shell!  | [starship.rs](starship.rs) |
+| [tmux](tasks/tmux.yml) | Configuration file must be .tmux.conf  | [github/tmux](https://github.com/tmux/tmux) |
+| [tpm](tasks/tpm.yml) | Install tmux plugin manager and plugins listed on .tmux.conf  | [github/tmux-plugins](https://github.com/tmux-plugins/tpm) |
+| [vim-plug](tasks/vim-plug.yml) | Install vim-plug and plugins listed on .vim/plugins.vim | [github/vim-plug](https://github.com/junegunn/vim-plug) |
+| [vim](tasks/vim.yml) | Configuration file must be .vimrc | [vim.org](https://www.vim.org/) |
+| [zsh](tasks/zsh.yml) | Configuration file must be .zshrc | [zsh.org](https://www.zsh.org/) |
 
 ## Q&A
 
@@ -106,6 +116,6 @@ Open a pull request and add that task.
 
 ## Example repository
 
-I create these template for my dotfiles that you can find here -> [wabri/dotfiles](https://github.com/Wabri/dotfiles).
+I create these template for my dotfiles -> [wabri/dotfiles](https://github.com/Wabri/dotfiles).
 
 
