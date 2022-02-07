@@ -1,0 +1,11 @@
+---
+- name: Add Global gitignore
+  copy:
+    remote_src: yes
+    src: .gitignore
+    dest: "{{ home_dir }}/.gitignore"
+    owner: "{{ username }}"
+    group: "{{ group | default(username) }}"
+    mode: '0755'
+    backup: yes
+
