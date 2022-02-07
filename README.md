@@ -52,7 +52,7 @@ This is the complete list of every variable that is possible to configure:
 | general_install | no | true | Is a boolean variable used to enable or not the general installation (N.B. [Ide vs System vs General](#ide-vs-system-vs-general)) |
 | before | no | - paru <br> - homebrew | List of the tasks to apply before every other tasks. This could be helpfull for package manager installation or multiple service that need to be stop. (N.B. [List of all tasks](#list-of-all-tasks)) |
 | after | no | - bluetooth | Like before, but after. (N.B. [List of all tasks](#list-of-all-tasks))|
-| ide_packages | no | - git<br>- zsh<br>- vim<br>- tmux | List of tasks that install only the ide environment. |
+| ide_packages | no | - git<br>- zsh<br>- vim<br>- tmux | List of packages to install for ide environment. |
 | system_packages | no | - htop<br>- vagrant<br>- arandr | Like ide_packages but for system_packages. |
 | general_packages | no | - firefox<br>- spotify | Like system_packages but for general_packages. |
 | ide_config | no | - vim<br>- zsh<br>-ohmyzsh | List of tasks that apply configurations for the ide environment. (N.B. [List of all tasks](#list-of-all-tasks)) |
