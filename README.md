@@ -86,9 +86,11 @@ If you're wondering where to put a configuration task or a package installation,
 | [bluetooth](tasks/bluetooth.yml) | These task enable systemd bluetooth service | --- |
 | [dunst](tasks/dunst.yml) | Configuration file must be on .config/dunst/ | [dunst-project](https://dunst-project.org) |
 | [git](tasks/git.yml) | Configuration file must be .gitconfig and .gitignore | [git](https://git-scm.com/) |
+| [grub2-themes](tasks/grub2-themes.yml) | Install and select theme (default: whitesur) for grub2. (Works only on linux and not in all distributions) | [github/grub2-themes](https://github.com/vinceliuice/grub2-themes) |
 | [gtk3](tasks/gtk3.yml) | Configuration file must be .config/gtk-3.0/ | [gtk.org](https://www.gtk.org/) |
 | [homebrew](tasks/homebrew.yml) | Install homebrew on MacOSX | [brew.sh](https://brew.sh/) |
 | [i3](tasks/i3.yml) | Configuration file must be .config/i3/ | [i3wm.org](https://i3wm.org/) |
+| [neofetch](tasks/neofetch.yml) | Configuration file must be .config/neofetch/ | [dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) |
 | [nitrogen](tasks/nitrogen.yml) | Configuration file must be .config/nitrogen/ | [github/nitrogen](https://github.com/l3ib/nitrogen/) |
 | [ohmyzsh](tasks/ohmyzsh.yml) | Install oh-my-zsh | [ohmyz.sh](https://ohmyz.sh/) |
 | [paru](tasks/paru.yml) | Install paru on Archlinux | [github/paru](https://github.com/morganamilo/paru) |
@@ -117,5 +119,4 @@ Open a pull request and add that task.
 ## Example repository
 
 I create these template for my dotfiles -> [wabri/dotfiles](https://github.com/Wabri/dotfiles).
-
 
