@@ -1,0 +1,19 @@
+---
+- name: Create config/nvim directory
+  file:
+    path: "{{ home_dir }}/.config/nvim"
+    owner: "{{ username }}"
+    group: "{{ group | default(username) }}"
+    state: directory
+    mode: "0755"
+
+- name: copy init.vim
+  copy:
+    remote_src: yes
+    src: .config/nvim/init.vim
+    dest: "{{ home_dir }}/.config/nvim/init.vim"
+    owner: "{{ username }}"
+    group: "{{ group | default(username) }}"
+    mode: '0755'
+    backup: yes
+
