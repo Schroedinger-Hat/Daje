@@ -15,3 +15,14 @@ on:
             fetch-depth: 0
         - uses: wagoid/commitlint-github-action@v4
           firstParent: true
+    golangci:
+      name: lint
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Run golangci-lint
+          uses: golangci/golangci-lint-action@v2
+          with:
+            version: latest
+            only-new-issues: false
+            args: --timeout 2m --config .golangci.yaml
