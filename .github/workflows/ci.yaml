@@ -6,23 +6,24 @@ on:
   pull_request:
     branches: [ "*" ]
   
-  jobs:
-    commit_lint:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-          with:
-            fetch-depth: 0
-        - uses: wagoid/commitlint-github-action@v4
+jobs:
+  commit_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v4
+        with:
           firstParent: true
-    golangci:
-      name: lint
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: Run golangci-lint
-          uses: golangci/golangci-lint-action@v2
-          with:
-            version: latest
-            only-new-issues: false
-            args: --timeout 2m --config .golangci.yaml
+  golangci:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: latest
+          only-new-issues: false
+          args: --timeout 2m --config .golangci.yaml
