@@ -1,23 +1,37 @@
 package init
 
-import "github.com/spf13/cobra"
+import (
+	"fmt"
+
+	"github.com/spf13/cobra"
+
+	"github.com/Schrodinger-Hat/Daje/internal/config"
+)
 
 func NewCmdInit() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "init [flags]",
 		Short: "Initialize daje on your system",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return createRun()
+			return submitAction()
 		},
 	}
 
 	return cmd
 }
 
-func createRun() error {
-	return submitAction()
-}
-
 func submitAction() error {
+	if config.IsDajeInitialized() {
+		fmt.Println("Daje has been already initialized in the system.")
+		return nil
+	}
+
+	err := config.InitEmptyDaje()
+	if err != nil {
+		return nil
+	}
+
+	fmt.Println("Daje has been initialized successfully!")
+
 	return nil
 }
