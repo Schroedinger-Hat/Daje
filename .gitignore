@@ -19,5 +19,8 @@ bin
 .vscode
 .idea
 
+# Env
+.direnv
+
 # Mac
 .DS_Store
