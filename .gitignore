@@ -21,3 +21,4 @@ bin
 
 # Mac
 .DS_Store
+dist/
