@@ -76,42 +76,16 @@ nfpms:
 
     # Your app's license.
     # Default is empty.
-    license: Apache 2.0
+    license: GNU General Public License v3.0
 
     # Formats to be generated.
     formats:
-
       - deb
       - rpm
 
-    # Packages your package depends on. (overridable)
-    dependencies:
-      - git
-      - zsh
-
-    # Packages it provides. (overridable)
-    # Since: v1.11.
-    provides:
-      - bar
-
-    # Packages your package recommends installing. (overridable)
-    recommends:
-      - bzr
-      - gtk
-
-    # Packages your package suggests installing. (overridable)
-    suggests:
-      - cvs
-      - ksh
-
-    # Packages that conflict with your package. (overridable)
-    conflicts:
-      - svn
-      - bash
-
     # Packages it replaces. (overridable)
     replaces:
-      - fish
+      - daje
 
     # Template to the path that the binaries should be installed.
     # Defaults to `/usr/bin`.
