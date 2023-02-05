@@ -89,7 +89,7 @@ nfpms:
 
     # Template to the path that the binaries should be installed.
     # Defaults to `/usr/bin`.
-    bindir: /usr/bin
+    bindir: /usr/local/bin
 
     # Version Epoch.
     # Default is extracted from `version` if it is semver compatible.
