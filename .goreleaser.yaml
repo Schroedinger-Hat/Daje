@@ -1,11 +1,14 @@
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
+project_name: daje
+release:
+  prerelease: auto
+  name_template: "Daje {{.Version}}"
+
 before:
   hooks:
     # You may remove this if you don't use go modules.
     - go mod tidy
-    # you may remove this if you don't need go generate
-    - go generate ./...
 builds:
   - id: daje
     binary: daje
@@ -13,7 +16,6 @@ builds:
     goos:
       - linux
       - darwin
-      # - windows
     goarch:
       - amd64
       - arm64
@@ -23,8 +25,6 @@ builds:
       - CCX_darwin_amd64=o64-clang+
       - CC_darwin_arm64=aarch64-apple-darwin20.2-clang
       - CCX_darwin_arm64=aarch64-apple-darwin20.2-clang++
-      # - CC_windows_amd64=x86_64-w64-mingw32-gc
-      # - CCX_windows_amd64=x86_64-w64-mingw32-g++
       - 'CC={{ index .Env (print "CC_" .Os "_" .Arch) }}'
       - 'CCX={{ index .Env (print "CCX_" .Os "_" .Arch) }}'
 
@@ -60,15 +60,11 @@ changelog:
 nfpms:
   # note that this is an array of nfpm configs
   -
-    # ID of the nfpm config, must be unique.
-    # Defaults to "default".
-    id: foo
-
     # Name of the package.
     # Defaults to `ProjectName`.
     package_name: daje
 
-    maintainer: Schrodinger's Hat Team <wabri@schrodinger-hat.it>
+    maintainer: Schrodinger's Hat Team <info@schrodinger-hat.it>
 
     # Template to your app's description.
     # Default is empty.
@@ -85,54 +81,6 @@ nfpms:
       - deb
       - rpm
 
-    # Packages it replaces. (overridable)
-    replaces:
-      - daje
-
     # Template to the path that the binaries should be installed.
     # Defaults to `/usr/bin`.
     bindir: /usr/local/bin
-
-    # Version Epoch.
-    # Default is extracted from `version` if it is semver compatible.
-    epoch: 2
-
-    # Version Prerelease.
-    # Default is extracted from `version` if it is semver compatible.
-    prerelease: beta1
-
-    # Version Metadata (previously deb.metadata).
-    # Default is extracted from `version` if it is semver compatible.
-    # Setting metadata might interfere with version comparisons depending on the
-    # packager.
-    version_metadata: git
-
-    # Version Release.
-    release: 1
-
-    # Section.
-    section: default
-
-    # Priority.
-    priority: extra
-
-    # Makes a meta package - an empty package that contains only supporting
-    # files and dependencies.
-    # When set to `true`, the `builds` option is ignored.
-    # Defaults to false.
-    meta: true
-
-    # Changelog YAML file, see: https://github.com/goreleaser/chglog
-    #
-    # You can use goreleaser/chglog to create the changelog for your project,
-    # pass that changelog yaml file to GoReleaser,
-    # and it should in turn setup it accordingly for the given available
-    # formats (deb and rpm at the moment).
-    #
-    # Experimental.
-    # Default: empty.
-    # Since: v1.11.
-    # changelog: ./foo.yml
-
-    # Contents to add to the package.
-    # GoReleaser will automatically add the binaries.
