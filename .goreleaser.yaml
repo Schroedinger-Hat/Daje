@@ -1,0 +1,86 @@
+# This is an example .goreleaser.yml file with some sensible defaults.
+# Make sure to check the documentation at https://goreleaser.com
+project_name: daje
+release:
+  prerelease: auto
+  name_template: "Daje {{.Version}}"
+
+before:
+  hooks:
+    # You may remove this if you don't use go modules.
+    - go mod tidy
+builds:
+  - id: daje
+    binary: daje
+    main: .
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+      - CC_darwin_amd64=o64-clang
+      - CCX_darwin_amd64=o64-clang+
+      - CC_darwin_arm64=aarch64-apple-darwin20.2-clang
+      - CCX_darwin_arm64=aarch64-apple-darwin20.2-clang++
+      - 'CC={{ index .Env (print "CC_" .Os "_" .Arch) }}'
+      - 'CCX={{ index .Env (print "CCX_" .Os "_" .Arch) }}'
+
+archives:
+  - format: tar.gz
+    # this name template makes the OS and Arch compatible with the results of uname.
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end }}
+    # use zip for windows archives, comment out for future reference
+    # format_overrides:
+    # - goos: windows
+    #   format: zip
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+
+# The lines beneath this are called `modelines`. See `:help modeline`
+# Feel free to remove those if you don't want/use them.
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+# vim: set ts=2 sw=2 tw=0 fo=cnqoj
+nfpms:
+  # note that this is an array of nfpm configs
+  -
+    # Name of the package.
+    # Defaults to `ProjectName`.
+    package_name: daje
+
+    maintainer: Schrodinger's Hat Team <info@schrodinger-hat.it>
+
+    # Template to your app's description.
+    # Default is empty.
+    description: |-
+      daje
+      A general purpose dotfiles installer
+
+    # Your app's license.
+    # Default is empty.
+    license: GNU General Public License v3.0
+
+    # Formats to be generated.
+    formats:
+      - deb
+      - rpm
+
+    # Template to the path that the binaries should be installed.
+    # Defaults to `/usr/bin`.
+    bindir: /usr/local/bin
