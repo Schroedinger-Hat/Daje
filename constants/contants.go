@@ -1,3 +1,5 @@
 package constants
 
-const DajeDotFile = ".daje"
+var DajeConfigBaseDir = "~/.config/"
+var DajeDotfileName = "daje.conf"
+var Version = ""
