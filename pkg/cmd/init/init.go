@@ -21,17 +21,18 @@ func NewCmdInit() *cobra.Command {
 }
 
 func submitAction() error {
-	if config.IsDajeInitialized() {
+	if !config.IsDajeInitialized() {
+		err := config.InitEmptyDaje()
+		if err != nil {
+			fmt.Println(err)
+			return nil
+		}
+
+		fmt.Println("Daje has been initialized successfully!")
+	} else {
 		fmt.Println("Daje has been already initialized in the system.")
 		return nil
 	}
-
-	err := config.InitEmptyDaje()
-	if err != nil {
-		return nil
-	}
-
-	fmt.Println("Daje has been initialized successfully!")
 
 	return nil
 }
