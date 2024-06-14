@@ -3,6 +3,7 @@ package root
 import (
 	"github.com/spf13/cobra"
 
+	"github.com/Schrodinger-Hat/Daje/pkg/cmd/checkhealth"
 	initCmd "github.com/Schrodinger-Hat/Daje/pkg/cmd/init"
 )
 
@@ -18,6 +19,7 @@ $ daje init
 	}
 
 	cmd.AddCommand(initCmd.NewCmdInit())
+	cmd.AddCommand(checkhealth.NewCmdCheckhealth())
 
 	return cmd
 }
