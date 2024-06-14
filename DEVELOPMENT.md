@@ -30,7 +30,36 @@ make build-test-dev
 This generates all the binary files necessary for daje, now you should find `daje` inside the `bin` directory. To check if everything is gone ok you can run:
 
 ```
-./bin/daje checkhealt
+./bin/daje checkhealth
+```
+
+You should have something like this:
+
+```bash
+----- Start CLEAN -----
+
+# Remove all the daje metadata and builds...
+rm -r <project_root>/bin &>/dev/null
+
+----- End CLEAN -----
+
+----- Start BUILD-TEST-DEV -----
+
+# Building daje for development environment...
+go build -ldflags "-X github.com/Schrodinger-Hat/Daje/constants.DajeConfigBaseDir=<project_root>/testdata -X 
+github.com/Schrodinger-Hat/Daje/constants.Version=<version>" -o ./bin/daje .
+
+----- End BUILD-TEST-DEV -----
+
+----- Start CHECKHEALTH -----
+
+# run checkhealth command...
+./bin/daje checkhealth
+Version:  <version>
+Configuration path:  <project_root>/testdata/daje.conf
+Tuning:  true
+
+----- End CHECKHEALTH -----
 ```
 
 ## Version
