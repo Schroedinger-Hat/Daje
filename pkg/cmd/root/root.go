@@ -3,8 +3,8 @@ package root
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/Schrodinger-Hat/Daje/pkg/cmd/checkhealth"
-	initCmd "github.com/Schrodinger-Hat/Daje/pkg/cmd/init"
+	"github.com/Schroedinger-Hat/Daje/pkg/cmd/checkhealth"
+	initCmd "github.com/Schroedinger-Hat/Daje/pkg/cmd/init"
 )
 
 func NewCmdRoot() *cobra.Command {
@@ -18,8 +18,8 @@ $ daje init
 `,
 	}
 
-	cmd.AddCommand(initCmd.NewCmdInit())
-	cmd.AddCommand(checkhealth.NewCmdCheckhealth())
+	cmd.AddCommand(initCmd.CmdInit())
+	cmd.AddCommand(checkhealth.CmdCheckhealth())
 
 	return cmd
 }

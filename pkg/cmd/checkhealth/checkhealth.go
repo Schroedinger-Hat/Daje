@@ -1,31 +1,41 @@
 package checkhealth
 
 import (
-	"fmt"
+	"errors"
+	"log"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 
-	"github.com/Schrodinger-Hat/Daje/constants"
-	"github.com/Schrodinger-Hat/Daje/internal/tuning"
+	"github.com/Schroedinger-Hat/Daje/constants"
+	"github.com/Schroedinger-Hat/Daje/internal/config"
 )
 
-func NewCmdCheckhealth() *cobra.Command {
+func CmdCheckhealth() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "checkhealth [flags]",
 		Short: "Check Daje health",
-		RunE: func(cmd *cobra.Command, args []string) error {
-			return submitAction()
+		RunE: func(cmd *cobra.Command, args []string) error { //nolint:all
+			return submitCmdCheckhealth()
 		},
 	}
 
 	return cmd
 }
 
-func submitAction() error {
+func submitCmdCheckhealth() error {
+	err := config.LoadConfig()
+	if err != nil {
+		errorMessage := "Checkhealth->" + err.Error()
+		log.Fatal(errorMessage)
+		return errors.New(errorMessage)
+	}
+	log.Println("[Checkhealth]:[LoadConfig]", "Configuration Path:"+viper.GetViper().ConfigFileUsed())
 
-	fmt.Println("Version: ", constants.Version)
-	fmt.Println("Configuration path: ", constants.DajeDotfilePath)
-	fmt.Println("Tuning: ", tuning.IsSystemTuned())
+	log.Println("[Checkhealth]:[ConfigValues]")
+	for _, value := range constants.DajeConfigParameters {
+		log.Println(value + ": " + viper.GetString(value))
+	}
 
 	return nil
 }

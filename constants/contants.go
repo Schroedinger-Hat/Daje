@@ -1,9 +1,15 @@
 package constants
 
-import "path"
+var DajeBasePath = "~"
+var DajeConfigFileName = ".dajerc"
+var DajeConfigPathOrder = []string{
+	".config/daje/",
+	".",
+}
 
-var DajeConfigBaseDir = "~/.config/"
-var DajeDotfileName = "daje.conf"
-var DajeDotfilePath = path.Join(DajeConfigBaseDir, DajeDotfileName)
+var DajeConfigParameters = []string{
+	"dotfiles_directory",
+	"dotfiles_remote",
+}
 
 var Version = ""
