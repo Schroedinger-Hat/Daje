@@ -12,7 +12,7 @@ func NewCmdInit() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "init [flags]",
 		Short: "Initialize daje on your system",
-		RunE: func(cmd *cobra.Command, args []string) error {
+		RunE: func(cmd *cobra.Command, args []string) error { //nolint:all
 			return submitAction()
 		},
 	}
