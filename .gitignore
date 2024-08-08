@@ -22,3 +22,6 @@ bin
 # Mac
 .DS_Store
 dist/
+
+# DAJE
+testdata

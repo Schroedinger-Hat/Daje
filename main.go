@@ -3,7 +3,9 @@ package main
 import (
 	"os"
 
-	"github.com/Schrodinger-Hat/Daje/pkg/cmd/root"
+	"github.com/Schroedinger-Hat/Daje/constants"
+	"github.com/Schroedinger-Hat/Daje/pkg/cmd/root"
+	"github.com/spf13/viper"
 )
 
 type exitCode int
@@ -14,6 +16,8 @@ const (
 )
 
 func main() {
+	viper.SetConfigType("yaml")
+	viper.SetConfigName(constants.DajeConfigFileName)
 	code := mainRun()
 	os.Exit(int(code))
 }

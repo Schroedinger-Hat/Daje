@@ -51,12 +51,6 @@
 
 A general purpose dotfiles installer under development, not ready to be used!
 
-### Tech stack
-
-- [golang](https://go.dev/)
-
-<!-- USAGE EXAMPLES -->
-
 ## Usage
 
 WIP
@@ -67,7 +61,8 @@ WIP
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion that would make this better, please fork the repo and create a pull request, you can find all the development information in [DEVELOPMENT.md](DEVELOPMENT.md). You can also simply open an issue with the tag "enhancement".
+
 Don't forget to give the project a star! Thanks again!
 
 <!-- CONTACT -->
