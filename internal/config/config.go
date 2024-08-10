@@ -33,7 +33,8 @@ func LoadConfig() error {
 func getConfigFilePath() (string, error) {
 	for _, value := range constants.DajeConfigPathOrder {
 		currentFilepath := path.Join(constants.DajeBasePath, value, constants.DajeConfigFileName)
-		if _, err := os.Stat(currentFilepath); err == nil {
+		_, err := os.Stat(currentFilepath)
+		if err == nil {
 			return currentFilepath, nil
 		}
 	}
