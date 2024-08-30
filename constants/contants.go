@@ -1,15 +1,19 @@
 package constants
 
-var DajeBasePath = "~"
-var DajeConfigFileName = ".dajerc"
-var DajeConfigPathOrder = []string{
+var ConfigBasepath = ""
+var ConfigFileName = ".dajerc"
+var ConfigPathOrder = []string{
 	".config/daje/",
 	".",
 }
 
-var DajeConfigParameters = []string{
-	"dotfiles_directory",
-	"dotfiles_remote",
+var ConfigParameters = []string{
+	"dotfiles.local",
+	"dotfiles.remote",
+}
+
+var ConfigParametersPath = []string{
+	"dotfiles.local",
 }
 
 var Version = ""

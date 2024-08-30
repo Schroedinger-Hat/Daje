@@ -1,9 +1,11 @@
 package main
 
 import (
+	"log"
 	"os"
 
 	"github.com/Schroedinger-Hat/Daje/constants"
+	"github.com/Schroedinger-Hat/Daje/internal/config"
 	"github.com/Schroedinger-Hat/Daje/pkg/cmd/root"
 	"github.com/spf13/viper"
 )
@@ -17,7 +19,11 @@ const (
 
 func main() {
 	viper.SetConfigType("yaml")
-	viper.SetConfigName(constants.DajeConfigFileName)
+	viper.SetConfigName(constants.ConfigFileName)
+	if err := config.LoadConfig(); err != nil {
+		errorMessage := "main->" + err.Error()
+		log.Fatal(errorMessage)
+	}
 	code := mainRun()
 	os.Exit(int(code))
 }

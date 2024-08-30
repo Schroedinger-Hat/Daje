@@ -1,14 +1,12 @@
 package checkhealth
 
 import (
-	"errors"
 	"log"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
 	"github.com/Schroedinger-Hat/Daje/constants"
-	"github.com/Schroedinger-Hat/Daje/internal/config"
 )
 
 func CmdCheckhealth() *cobra.Command {
@@ -24,17 +22,10 @@ func CmdCheckhealth() *cobra.Command {
 }
 
 func submitCmdCheckhealth() error {
-	err := config.LoadConfig()
-	if err != nil {
-		errorMessage := "Checkhealth->" + err.Error()
-		log.Fatal(errorMessage)
-		return errors.New(errorMessage)
-	}
 	log.Println("[Checkhealth]:[LoadConfig]", "Configuration Path:"+viper.GetViper().ConfigFileUsed())
 
-	log.Println("[Checkhealth]:[ConfigValues]")
-	for _, value := range constants.DajeConfigParameters {
-		log.Println(value + ": " + viper.GetString(value))
+	for _, value := range constants.ConfigParameters {
+		log.Println("[Checkhealth]:[LoadConfig]", value+": "+viper.GetString(value))
 	}
 
 	return nil

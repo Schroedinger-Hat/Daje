@@ -1,2 +1,3 @@
-dotfiles_directory: .config/dotfiles
-dotfiles_remote: https://github.com/Wabri/dotfiles
+dotfiles:
+  local: .config/dotfiles
+  remote: https://github.com/Wabri/dotfiles

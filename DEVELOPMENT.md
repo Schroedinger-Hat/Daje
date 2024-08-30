@@ -46,7 +46,7 @@ rm -r <project_root>/bin &>/dev/null
 ----- Start BUILD-TEST-DEV -----
 
 # Building daje for development environment...
-go build -ldflags "-X github.com/Schrodinger-Hat/Daje/constants.DajeConfigBaseDir=<project_root>/testdata -X 
+go build -ldflags "-X github.com/Schrodinger-Hat/Daje/constants.ConfigBasepath=<project_root>/testdata -X 
 github.com/Schrodinger-Hat/Daje/constants.Version=<version>" -o ./bin/daje .
 
 ----- End BUILD-TEST-DEV -----
