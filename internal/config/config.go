@@ -10,18 +10,18 @@ import (
 	"github.com/spf13/viper"
 )
 
-type configReturn struct {
+type configFunctionReturn struct {
 	Value string
 	Error error
 }
 
 func LoadConfig() error {
 	configFilePath := ""
-	viperReadInConfig := func() configReturn {
+	viperReadInConfig := func() configFunctionReturn {
 		viper.SetConfigFile(configFilePath)
-		return configReturn{"", viper.ReadInConfig()}
+		return configFunctionReturn{"", viper.ReadInConfig()}
 	}
-	functionOrder := []func() configReturn{
+	functionOrder := []func() configFunctionReturn{
 		checkBasePath,
 		getConfigFilePath,
 		viperReadInConfig,
@@ -43,15 +43,15 @@ func LoadConfig() error {
 	return nil
 }
 
-func checkBasePath() configReturn {
+func checkBasePath() configFunctionReturn {
 	if constants.ConfigBasepath == "" {
 		homepath, err := os.UserHomeDir()
 		if err != nil {
-			return configReturn{"", errors.New("getConfigFilePath: User home not found")}
+			return configFunctionReturn{"", errors.New("getConfigFilePath: User home not found")}
 		}
 		constants.ConfigBasepath = homepath
 	}
-	return configReturn{"", nil}
+	return configFunctionReturn{"", nil}
 }
 
 func pathRelativeToAbsolute(configDirectory string) {
@@ -61,13 +61,13 @@ func pathRelativeToAbsolute(configDirectory string) {
 	}
 }
 
-func getConfigFilePath() configReturn {
+func getConfigFilePath() configFunctionReturn {
 	for _, value := range constants.ConfigPathOrder {
 		currentFilepath := path.Join(constants.ConfigBasepath, value, constants.ConfigFileName)
 		_, err := os.Stat(currentFilepath)
 		if err == nil {
-			return configReturn{currentFilepath, nil}
+			return configFunctionReturn{currentFilepath, nil}
 		}
 	}
-	return configReturn{"", errors.New("getConfigFilePath: Configuration not found")}
+	return configFunctionReturn{"", errors.New("getConfigFilePath: Configuration not found")}
 }
