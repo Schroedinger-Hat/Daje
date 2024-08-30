@@ -20,7 +20,8 @@ const (
 func main() {
 	viper.SetConfigType("yaml")
 	viper.SetConfigName(constants.ConfigFileName)
-	if err := config.LoadConfig(); err != nil {
+	err := config.LoadConfig()
+	if err != nil {
 		errorMessage := "main->" + err.Error()
 		log.Fatal(errorMessage)
 	}
