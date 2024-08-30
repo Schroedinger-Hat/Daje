@@ -1,0 +1,3 @@
+dotfiles:
+  local: .config/dotfiles
+  remote: https://github.com/Wabri/dotfiles
