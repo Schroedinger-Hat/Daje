@@ -6,7 +6,7 @@ import (
 	"os/user"
 	"path/filepath"
 
-	"github.com/Schrodinger-Hat/Daje/constants"
+	"github.com/schroedinger-Hat/Daje/constants"
 )
 
 func InitEmptyDaje() error {

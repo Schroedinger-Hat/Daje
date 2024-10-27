@@ -6,7 +6,7 @@ linters-settings:
   maligned:
     suggest-new: true
   goimports:
-    local-prefixes: github.com/Schrodinger-Hat/Daje
+    local-prefixes: github.com/schroedinger-Hat/Daje
   dupl:
     threshold: 100
   goconst:

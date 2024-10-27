@@ -3,7 +3,7 @@ package root
 import (
 	"github.com/spf13/cobra"
 
-	initCmd "github.com/Schrodinger-Hat/Daje/pkg/cmd/init"
+	initCmd "github.com/schroedinger-Hat/Daje/pkg/cmd/init"
 )
 
 func NewCmdRoot() *cobra.Command {

@@ -1,4 +1,4 @@
-module github.com/Schrodinger-Hat/Daje
+module github.com/schroedinger-Hat/Daje
 
 go 1.18
 
