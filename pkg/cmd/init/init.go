@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/Schrodinger-Hat/Daje/internal/config"
+	"github.com/schroedinger-Hat/Daje/internal/config"
 )
 
 func NewCmdInit() *cobra.Command {

@@ -12,20 +12,20 @@
 <div align="center">
   <h1>Daje</h1>
   
-  <a href="https://github.com/Schrodinger-Hat/daje">
+  <a href="https://github.com/schroedinger-Hat/daje">
     <img src="resources/sh.png" alt="Logo" width="80" height="80">
   </a>
 
   <p align="center">
     <br />
-    <a href="https://github.com/Schrodinger-Hat/daje/blob/main/README.md"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/schroedinger-Hat/daje/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://daje.schrodinger-hat.it//">View Demo</a> -->
+    <!-- <a href="https://daje.schroedinger-hat.org//">View Demo</a> -->
     ·
-    <a href="https://github.com/Schrodinger-Hat/daje/issues">Report Bug</a>
+    <a href="https://github.com/schroedinger-Hat/daje/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Schrodinger-Hat/daje/issues">Request Feature</a>
+    <a href="https://github.com/schroedinger-Hat/daje/issues">Request Feature</a>
   </p>
 </div>
 
@@ -74,20 +74,20 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-Schrodinger's Hat Team - [@schrodinger_hat](mailto:wabri@schrodinger-hat.it)
+Schroedinger's Hat Team - [@schrodinger_hat](mailto:dev@schroedinger-hat.org)
 
-Project Link: [https://github.com/Schrodinger-Hat/daje](https://github.com/Schrodinger-Hat/daje)
+Project Link: [https://github.com/schroedinger-Hat/daje](https://github.com/schroedinger-Hat/daje)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Schrodinger-Hat/daje.svg?style=for-the-badge
-[contributors-url]: https://github.com/Schrodinger-Hat/daje/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Schrodinger-Hat/daje.svg?style=for-the-badge
-[forks-url]: https://github.com/Schrodinger-Hat/daje/network/members
-[stars-shield]: https://img.shields.io/github/stars/Schrodinger-Hat/daje?style=for-the-badge
-[stars-url]: https://github.com/Schrodinger-Hat/daje/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Schrodinger-Hat/daje.svg?style=for-the-badge
-[issues-url]: https://github.com/Schrodinger-Hat/daje/issues
 
 
+[contributors-shield]: https://img.shields.io/github/contributors/schroedinger-Hat/daje.svg?style=for-the-badge
+[contributors-url]: https://github.com/schroedinger-Hat/daje/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/schroedinger-Hat/daje.svg?style=for-the-badge
+[forks-url]: https://github.com/schroedinger-Hat/daje/network/members
+[stars-shield]: https://img.shields.io/github/stars/schroedinger-Hat/daje?style=for-the-badge
+[stars-url]: https://github.com/schroedinger-Hat/daje/stargazers
+[issues-shield]: https://img.shields.io/github/issues/schroedinger-Hat/daje.svg?style=for-the-badge
+[issues-url]: https://github.com/schroedinger-Hat/daje/issues

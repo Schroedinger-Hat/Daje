@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/Schrodinger-Hat/Daje/pkg/cmd/root"
+	"github.com/schroedinger-Hat/Daje/pkg/cmd/root"
 )
 
 type exitCode int

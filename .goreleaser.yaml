@@ -64,7 +64,7 @@ nfpms:
     # Defaults to `ProjectName`.
     package_name: daje
 
-    maintainer: Schrodinger's Hat Team <info@schrodinger-hat.it>
+    maintainer: Schroedinger's Hat Team <dev@schroedinger-hat.org>
 
     # Template to your app's description.
     # Default is empty.
