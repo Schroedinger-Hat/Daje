@@ -42,6 +42,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#maintainers">Maintainers</a></li>
   </ol>
 </details>
 
@@ -91,3 +92,25 @@ Project Link: [https://github.com/schroedinger-Hat/daje](https://github.com/schr
 [stars-url]: https://github.com/schroedinger-Hat/daje/stargazers
 [issues-shield]: https://img.shields.io/github/issues/schroedinger-Hat/daje.svg?style=for-the-badge
 [issues-url]: https://github.com/schroedinger-Hat/daje/issues
+
+<!-- MAINTAINERS -->
+
+## Maintainers
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/Wabri">
+          <img src="https://github.com/Wabri.png" width="100px;" alt="Gabriele Puliti"/>
+          <br />
+          <sub>
+            <b>Gabriele Puliti</b>
+          </sub>
+        </a>
+        <br />
+        <span>💻 Maintainer</span>
+      </td>
+    </tr>
+  </table>
+</div>
